@@ -1,3 +1,3 @@
 package com.meli.challengemeli.data.model.searchItems
 
-data class SearchResult(val results: List<Result>)
+data class SearchResults(val results: List<Result>)
