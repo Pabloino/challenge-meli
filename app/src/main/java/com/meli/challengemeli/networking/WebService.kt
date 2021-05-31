@@ -1,6 +1,6 @@
 package com.meli.challengemeli.networking
 
-import com.meli.challengemeli.data.model.searchItems.SearchResults
+import com.meli.challengemeli.data.model.SearchResults
 import com.meli.challengemeli.util.Site
 import retrofit2.http.GET
 import retrofit2.http.Path
