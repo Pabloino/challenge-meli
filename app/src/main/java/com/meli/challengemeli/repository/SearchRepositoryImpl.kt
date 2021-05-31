@@ -1,0 +1,11 @@
+package com.meli.challengemeli.repository
+
+import com.meli.challengemeli.data.model.searchItems.SearchResults
+import com.meli.challengemeli.data.remote.SearchResultsDataSource
+import com.meli.challengemeli.util.Site
+
+class SearchRepositoryImpl(private val searchResultsDataSource: SearchResultsDataSource) : SearchRepository {
+
+    override suspend fun getSearchResults(siteId: Site, searchText: String): SearchResults = searchResultsDataSource.getSearchResults(siteId, searchText)
+
+}
