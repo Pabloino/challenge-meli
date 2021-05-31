@@ -1,6 +1,6 @@
 package com.meli.challengemeli.repository
 
-import com.meli.challengemeli.data.model.searchItems.SearchResults
+import com.meli.challengemeli.data.model.SearchResults
 import com.meli.challengemeli.util.Site
 
 interface SearchRepository {
