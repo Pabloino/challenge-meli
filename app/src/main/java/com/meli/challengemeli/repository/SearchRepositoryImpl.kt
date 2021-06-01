@@ -6,6 +6,6 @@ import com.meli.challengemeli.util.Site
 
 class SearchRepositoryImpl(private val searchResultsDataSource: SearchResultsDataSource) : SearchRepository {
 
-    override suspend fun getSearchResults(siteId: Site, searchText: String): SearchResults = searchResultsDataSource.getSearchResults(siteId, searchText)
+    override suspend fun getSearchResults(siteId: Site, query: String): SearchResults = searchResultsDataSource.getSearchResults(siteId, query)
 
 }

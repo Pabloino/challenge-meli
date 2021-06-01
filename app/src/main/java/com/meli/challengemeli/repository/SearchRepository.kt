@@ -5,6 +5,6 @@ import com.meli.challengemeli.util.Site
 
 interface SearchRepository {
 
-    suspend fun getSearchResults(siteId: Site, searchText: String): SearchResults
+    suspend fun getSearchResults(siteId: Site, query: String): SearchResults
 
 }
