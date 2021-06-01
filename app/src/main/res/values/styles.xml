@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="colorPrimaryDark">@color/meliColorPrimaryVariant</item>
+        <item name="actionBarStyle">@style/ActionBarStyle</item>
+    </style>
+
+    <style name="ActionBarStyle" parent="Widget.AppCompat.ActionBar">
+        <item name="titleTextStyle">@style/ActionBarTitleTextStyle</item>
+        <item name="background">@color/meliColorPrimary</item>
+    </style>
+
+    <style name="ActionBarTitleTextStyle" parent="TextAppearance.AppCompat.Widget.ActionBar.Title">
+        <item name="android:textColor">@color/black</item>
+    </style>
+</resources>
