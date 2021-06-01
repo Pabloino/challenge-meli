@@ -1,7 +1,7 @@
 package com.meli.challengemeli.util
 
-sealed class Status {
-    object Loading : Status()
-    data class Success<T>(val data: T) : Status()
-    data class Error(val error: Throwable) : Status()
+sealed class Status<T> {
+    class Loading<T> : Status<T>()
+    data class Success<T>(val data: T) : Status<T>()
+    data class Error<T>(val error: Throwable) : Status<T>()
 }

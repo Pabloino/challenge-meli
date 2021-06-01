@@ -41,9 +41,11 @@ class SearchFragment : Fragment(R.layout.search_fragment) {
             when(status) {
                 is Status.Loading -> {
                     binding.progressBar.visibility = View.VISIBLE
+                    binding.resultsRecyclerView.visibility = View.GONE
                 }
-                is Status.Success<*> -> {
+                is Status.Success -> {
                     binding.progressBar.visibility = View.GONE
+                    binding.resultsRecyclerView.visibility = View.VISIBLE
                 }
                 is Status.Error -> {
                     binding.progressBar.visibility = View.GONE

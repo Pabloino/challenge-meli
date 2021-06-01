@@ -4,6 +4,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.meli.challengemeli.data.model.SearchResults
 import com.meli.challengemeli.data.remote.SearchResultsDataSource
 import com.meli.challengemeli.networking.RetrofitClient
 import com.meli.challengemeli.repository.SearchRepositoryImpl
@@ -16,12 +17,12 @@ class SearchViewModel : ViewModel() {
 
     private val searchRepository by lazy { SearchRepositoryImpl(SearchResultsDataSource(RetrofitClient.buildRetrofitClient())) }
 
-    private val mutableSearchResults = MutableLiveData<Status>()
-    val searchResults: LiveData<Status>
+    private val mutableSearchResults = MutableLiveData<Status<SearchResults>>()
+    val searchResults: LiveData<Status<SearchResults>>
         get() = mutableSearchResults
 
     fun findResults(siteId: Site, query: String) {
-        mutableSearchResults.value = Status.Loading
+        mutableSearchResults.value = Status.Loading()
 
         viewModelScope.launch(Dispatchers.IO) {
             try {
