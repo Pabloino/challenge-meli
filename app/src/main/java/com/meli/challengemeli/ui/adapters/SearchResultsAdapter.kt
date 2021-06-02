@@ -11,9 +11,11 @@ class SearchResultsAdapter(private val results: List<Result>) : RecyclerView.Ada
 
     inner class ItemViewHolder(private val binding: SearchResultItemBinding) : BaseViewHolder<Result>(binding.root) {
         override fun bind(item: Result) {
-            binding.title.text = item.title
             val price = if ((item.price % 1) == 0.0) item.price.toInt() else item.price
+
+            binding.title.text = item.title
             binding.price.text = "$${price}"
+
             Picasso.get()
                 .load(item.thumbnail)
                 .into(binding.imageProduct)

@@ -6,6 +6,7 @@ import android.view.View
 import androidx.appcompat.widget.SearchView
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.recyclerview.widget.DividerItemDecoration
 import com.meli.challengemeli.R
 import com.meli.challengemeli.databinding.SearchFragmentBinding
 import com.meli.challengemeli.ui.adapters.SearchResultsAdapter
@@ -21,7 +22,7 @@ class SearchFragment : Fragment(R.layout.search_fragment) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding = SearchFragmentBinding.bind(view)
-
+        binding.resultsRecyclerView.addItemDecoration(DividerItemDecoration(binding.resultsRecyclerView.context, DividerItemDecoration.VERTICAL))
         setUpSearchField()
         setUpResultsObserver()
     }
