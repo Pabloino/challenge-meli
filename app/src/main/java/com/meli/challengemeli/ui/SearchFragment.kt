@@ -8,6 +8,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import com.meli.challengemeli.R
 import com.meli.challengemeli.databinding.SearchFragmentBinding
+import com.meli.challengemeli.ui.adapters.SearchResultsAdapter
 import com.meli.challengemeli.util.Site
 import com.meli.challengemeli.util.Status
 import com.meli.challengemeli.viewModel.SearchViewModel
@@ -28,6 +29,7 @@ class SearchFragment : Fragment(R.layout.search_fragment) {
     private fun setUpSearchField() {
         binding.searchField.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
             override fun onQueryTextSubmit(query: String?): Boolean {
+                binding.searchField.clearFocus()
                 query?.let { viewModel.findResults(Site.MLA, it) }
                 return true
             }
@@ -46,6 +48,7 @@ class SearchFragment : Fragment(R.layout.search_fragment) {
                 is Status.Success -> {
                     binding.progressBar.visibility = View.GONE
                     binding.resultsRecyclerView.visibility = View.VISIBLE
+                    binding.resultsRecyclerView.adapter = SearchResultsAdapter(status.data.results)
                 }
                 is Status.Error -> {
                     binding.progressBar.visibility = View.GONE
