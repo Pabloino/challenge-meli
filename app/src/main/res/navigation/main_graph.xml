@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/searchFragment"
-        android:name="com.meli.challengemeli.ui.SearchFragment"
+        android:name="com.meli.challengemeli.ui.search.SearchFragment"
         android:label="SearchFragment"
         tools:layout="@layout/search_fragment" >
         <action
@@ -17,7 +17,7 @@
 
     <fragment
         android:id="@+id/productDetailsFragment"
-        android:name="com.meli.challengemeli.ui.ProductDetailsFragment"
+        android:name="com.meli.challengemeli.ui.productDetails.ProductDetailsFragment"
         android:label="ProductDetailsFragment"
         tools:layout="@layout/product_details_fragment" >
         <argument

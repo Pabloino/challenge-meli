@@ -1,4 +1,4 @@
-package com.meli.challengemeli.ui
+package com.meli.challengemeli.ui.productDetails
 
 import android.os.Bundle
 import android.view.View
@@ -24,6 +24,10 @@ class ProductDetailsFragment : Fragment(R.layout.product_details_fragment) {
             Picasso.get()
                 .load(thumbnail)
                 .into(binding.imageProduct)
+
+            attributes.forEach {
+                binding.productInformationContent.addView(ProductInformationItemView(requireContext(), it))
+            }
         }
     }
 }

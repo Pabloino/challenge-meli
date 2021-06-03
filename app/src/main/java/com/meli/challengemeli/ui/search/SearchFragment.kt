@@ -1,4 +1,4 @@
-package com.meli.challengemeli.ui
+package com.meli.challengemeli.ui.search
 
 import android.os.Bundle
 import android.util.Log
