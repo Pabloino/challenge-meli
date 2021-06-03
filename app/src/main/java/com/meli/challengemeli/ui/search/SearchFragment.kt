@@ -3,6 +3,7 @@ package com.meli.challengemeli.ui.search
 import android.os.Bundle
 import android.util.Log
 import android.view.View
+import android.widget.Toast
 import androidx.appcompat.widget.SearchView
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
@@ -55,6 +56,7 @@ class SearchFragment : Fragment(R.layout.search_fragment), SearchResultsAdapter.
                 }
                 is Status.Error -> {
                     binding.progressBar.visibility = View.GONE
+                    Toast.makeText(context, "Se produjo un error: ${status.error}", Toast.LENGTH_LONG).show()
                     Log.d("Error", "${status.error}")
                 }
             }
