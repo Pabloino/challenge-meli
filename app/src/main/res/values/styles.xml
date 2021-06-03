@@ -18,12 +18,24 @@
         <item name="android:textColor">@color/black</item>
     </style>
 
-    <style name="titleStyle" parent="baseTextStyle">
+    <style name="titleProductResultStyle" parent="baseTextStyle">
         <item name="android:textSize">16sp</item>
     </style>
 
-    <style name="priceStyle" parent="baseTextStyle">
+    <style name="priceProductResultStyle" parent="baseTextStyle">
         <item name="android:textSize">22sp</item>
+    </style>
+
+    <style name="titleProductDetailsStyle" parent="baseTextStyle">
+        <item name="android:textSize">20sp</item>
+    </style>
+
+    <style name="priceProductDetailsStyle" parent="baseTextStyle">
+        <item name="android:textSize">26sp</item>
+    </style>
+
+    <style name="titleProductInfoStyle" parent="baseTextStyle">
+        <item name="android:textSize">18sp</item>
     </style>
 
 </resources>

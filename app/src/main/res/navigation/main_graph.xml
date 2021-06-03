@@ -21,7 +21,7 @@
         android:label="ProductDetailsFragment"
         tools:layout="@layout/product_details_fragment" >
         <argument
-            android:name="Product"
+            android:name="product"
             app:argType="com.meli.challengemeli.data.model.Result" />
     </fragment>
 
