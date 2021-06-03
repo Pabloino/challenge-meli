@@ -7,7 +7,8 @@ import com.meli.challengemeli.data.model.Result
 import com.meli.challengemeli.databinding.SearchResultItemBinding
 import com.squareup.picasso.Picasso
 
-class SearchResultsAdapter(private val results: List<Result>) : RecyclerView.Adapter<BaseViewHolder<*>>() {
+class SearchResultsAdapter(private val results: List<Result>,
+                           private val resultClickListener: OnResultClickListener) : RecyclerView.Adapter<BaseViewHolder<*>>() {
 
     inner class ItemViewHolder(private val binding: SearchResultItemBinding) : BaseViewHolder<Result>(binding.root) {
         override fun bind(item: Result) {
@@ -19,6 +20,10 @@ class SearchResultsAdapter(private val results: List<Result>) : RecyclerView.Ada
             Picasso.get()
                 .load(item.thumbnail)
                 .into(binding.imageProduct)
+
+            binding.root.setOnClickListener {
+                resultClickListener.onResultClick(item)
+            }
         }
     }
 
@@ -34,4 +39,8 @@ class SearchResultsAdapter(private val results: List<Result>) : RecyclerView.Ada
     }
 
     override fun getItemCount(): Int = results.size
+
+    interface OnResultClickListener {
+        fun onResultClick(result: Result)
+    }
 }
