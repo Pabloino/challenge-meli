@@ -63,7 +63,7 @@
             app:layout_constraintEnd_toEndOf="@+id/title"
             app:layout_constraintStart_toStartOf="@+id/title"
             app:layout_constraintTop_toBottomOf="@id/divider"
-            android:text="@string/productInfoTitle"/>
+            android:text="@string/product_info_title"/>
 
         <LinearLayout
             android:id="@+id/productInformationContent"

@@ -5,19 +5,20 @@ import android.util.Log
 import android.view.View
 import android.widget.Toast
 import androidx.appcompat.widget.SearchView
-import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.DividerItemDecoration
 import com.meli.challengemeli.R
 import com.meli.challengemeli.data.model.Result
 import com.meli.challengemeli.databinding.SearchFragmentBinding
+import com.meli.challengemeli.ui.BaseFragment
 import com.meli.challengemeli.ui.adapters.SearchResultsAdapter
 import com.meli.challengemeli.util.Site
 import com.meli.challengemeli.util.Status
+import com.meli.challengemeli.viewModel.ActionBarStatus
 import com.meli.challengemeli.viewModel.SearchViewModel
 
-class SearchFragment : Fragment(R.layout.search_fragment), SearchResultsAdapter.OnResultClickListener {
+class SearchFragment : BaseFragment(R.layout.search_fragment), SearchResultsAdapter.OnResultClickListener {
 
     private lateinit var binding: SearchFragmentBinding
     private val viewModel by viewModels<SearchViewModel>()
@@ -62,6 +63,8 @@ class SearchFragment : Fragment(R.layout.search_fragment), SearchResultsAdapter.
             }
         })
     }
+
+    override fun getActionBarStatus(): ActionBarStatus = ActionBarStatus()
 
     override fun onResultClick(result: Result) {
         findNavController().navigate(SearchFragmentDirections.actionSearchFragmentToProductDetailsFragment(result))
