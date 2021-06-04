@@ -6,6 +6,6 @@ import com.meli.challengemeli.util.Site
 
 class SearchResultsDataSource(private val webService: WebService) {
 
-    suspend fun getSearchResults(siteId: Site, searchText: String): SearchResults = webService.getSearchResults(siteId, searchText)
+    suspend fun getSearchResults(siteId: Site, query: String): SearchResults = webService.getSearchResults(siteId, query)
 
 }

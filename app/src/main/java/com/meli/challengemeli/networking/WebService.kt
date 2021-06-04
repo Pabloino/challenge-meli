@@ -8,8 +8,8 @@ import retrofit2.http.Query
 
 interface WebService {
 
-    @GET("$SITES_URL_SEGMENT/$SITE_ID/$SEARCH_URL_SEGMENT")
-    suspend fun getSearchResults(@Path(SITE_ID) siteId: Site, @Query(Q_PARAM) searchText: String): SearchResults
+    @GET("$SITES_URL_SEGMENT/{${SITE_ID}}/$SEARCH_URL_SEGMENT")
+    suspend fun getSearchResults(@Path(SITE_ID) siteId: Site, @Query(Q_PARAM) query: String): SearchResults
 
     companion object {
         private const val SITE_ID = "SITE_ID"
