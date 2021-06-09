@@ -13,6 +13,6 @@
     <TextView
         android:id="@+id/infoValue"
         style="@style/productInfoItemStyle"
-        tools:text="Samsung qwqweqwe  wqeqwe"/>
+        tools:text="Samsung"/>
 
 </LinearLayout>
